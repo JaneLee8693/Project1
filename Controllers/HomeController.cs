@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Project1.Models;
 using System;
@@ -11,11 +12,11 @@ namespace Project1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private ApplicationContext Context { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationContext someName)
         {
-            _logger = logger;
+            Context = someName;
         }
 
         public IActionResult Index()
@@ -23,15 +24,7 @@ namespace Project1.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+
     }
 }
