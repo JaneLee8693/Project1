@@ -34,7 +34,6 @@
                                 <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="@i.TaskId"> Task Completed! </a>
                             </div>
                         </div>
-
                     }
                 }
             </div>
@@ -56,7 +55,6 @@
                                 <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="@i.TaskId"> Task Completed! </a>
                             </div>
                         </div>
-
                     }
                 }
             </div>
@@ -72,17 +70,16 @@
 
                     if (i.Quadrant == 3)
                     {
-                    <div>
-                        <div>@i.Task</div>
-                        <div>
-                            <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@i.TaskId"> Edit Task </a> <br />
-                            <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@i.TaskId"> Delete Task </a>
+                       <div>
+                            <div>@i.Task</div>
+                            <div>
+                                <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@i.TaskId"> Edit Task </a> <br />
+                                <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@i.TaskId"> Delete Task </a>
+                            </div>
+                            <div>
+                                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="@i.TaskId"> Task Completed! </a>
+                            </div>
                         </div>
-                        <div>
-                            <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="@i.TaskId"> Task Completed! </a>
-                        </div>
-                    </div>
-                      
                     }
                 }
             </div>
@@ -104,7 +101,6 @@
                                 <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="@i.TaskId"> Task Completed! </a>
                             </div>
                         </div>
-
                     }
                 }
             </div>
