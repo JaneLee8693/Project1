@@ -3,7 +3,7 @@
 }
 @* Euigun Jung: #3 *@
 
-@model Project1.Models.ApplicationResponse
+@model List<Project1.Models.ApplicationResponse
 
 <div class="container">
 
@@ -20,10 +20,11 @@
         <div class="col-5">
             Quadrant 1
             <div>
-                @foreach (var a in Model)
+                @foreach (var i in Model)
                 {
-                    if (a.Quadrant == 1)
+                    if (i.Quadrant == 1)
                     {
+                        <div>@i.TaskDescription</div>
                         <div>
                             <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@a.taskId"> Edit Task </a> <br />
                             <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@a.taskId"> Delete Task </a>
@@ -38,10 +39,11 @@
         <div class="col-5">
             Quadrant 2
             <div>
-                @foreach (var a in Model)
+                @foreach (var i in Model)
                 {
-                    if (a.Quadrant == 2)
+                    if (i.Quadrant == 2)
                     {
+                        <div>@i.TaskDescription</div>
                         <div>
                             <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@a.taskId"> Edit Task </a> <br />
                             <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@a.taskId"> Delete Task </a>
@@ -60,10 +62,11 @@
         <div class="col-5">
             Quadrant 3
             <div>
-                @foreach (var a in Model)
-                {
-                    if (a.Quadrant == 3)
+                @foreach (var i in Model)
+
+                    if (i.Quadrant == 3)
                     {
+                        <div>@i.TaskDescription</div>
                         <div>
                             <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@a.taskId"> Edit Task </a> <br />
                             <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@a.taskId"> Delete Task </a>
@@ -78,10 +81,11 @@
         <div class="col-5">
             Quadrant 4
             <div>
-                @foreach (var a in Model)
+                @foreach (var i in Model)
                 {
-                    if (a.Quadrant == 4)
+                    if (i.Quadrant == 4)
                     {
+                        <div>@i.TaskDescription</div>
                         <div>
                             <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@a.taskId"> Edit Task </a> <br />
                             <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@a.taskId"> Delete Task </a>
