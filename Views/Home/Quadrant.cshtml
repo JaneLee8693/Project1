@@ -3,7 +3,7 @@
 }
 @* Euigun Jung: #3 *@
 
-@model List<Project1.Models.ApplicationResponse
+@model Project1.Models.ApplicationResponse
 
 <div class="container">
 
@@ -24,13 +24,15 @@
                 {
                     if (i.Quadrant == 1)
                     {
-                        <div>@i.TaskDescription</div>
                         <div>
-                            <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@a.taskId"> Edit Task </a> <br />
-                            <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@a.taskId"> Delete Task </a>
-                        </div>
-                        <div>
-                            <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="a.taskId"> Task Completed! </a>
+                            <div>@i.Task</div>
+                            <div>
+                                <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@i.TaskId"> Edit Task </a> <br />
+                                <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@i.TaskId"> Delete Task </a>
+                            </div>
+                            <div>
+                                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="@i.TaskId"> Task Completed! </a>
+                            </div>
                         </div>
                     }
                 }
@@ -43,13 +45,15 @@
                 {
                     if (i.Quadrant == 2)
                     {
-                        <div>@i.TaskDescription</div>
                         <div>
-                            <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@a.taskId"> Edit Task </a> <br />
-                            <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@a.taskId"> Delete Task </a>
-                        </div>
-                        <div>
-                            <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="a.taskId"> Task Completed! </a>
+                            <div>@i.Task</div>
+                            <div>
+                                <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@i.TaskId"> Edit Task </a> <br />
+                                <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@i.TaskId"> Delete Task </a>
+                            </div>
+                            <div>
+                                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="@i.TaskId"> Task Completed! </a>
+                            </div>
                         </div>
                     }
                 }
@@ -66,13 +70,15 @@
 
                     if (i.Quadrant == 3)
                     {
-                        <div>@i.TaskDescription</div>
-                        <div>
-                            <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@a.taskId"> Edit Task </a> <br />
-                            <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@a.taskId"> Delete Task </a>
-                        </div>
-                        <div>
-                            <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="a.taskId"> Task Completed! </a>
+                       <div>
+                            <div>@i.Task</div>
+                            <div>
+                                <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@i.TaskId"> Edit Task </a> <br />
+                                <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@i.TaskId"> Delete Task </a>
+                            </div>
+                            <div>
+                                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="@i.TaskId"> Task Completed! </a>
+                            </div>
                         </div>
                     }
                 }
@@ -85,13 +91,15 @@
                 {
                     if (i.Quadrant == 4)
                     {
-                        <div>@i.TaskDescription</div>
                         <div>
-                            <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@a.taskId"> Edit Task </a> <br />
-                            <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@a.taskId"> Delete Task </a>
-                        </div>
-                        <div>
-                            <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="a.taskId"> Task Completed! </a>
+                            <div>@i.Task</div>
+                            <div>
+                                <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@i.TaskId"> Edit Task </a> <br />
+                                <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@i.TaskId"> Delete Task </a>
+                            </div>
+                            <div>
+                                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="@i.TaskId"> Task Completed! </a>
+                            </div>
                         </div>
                     }
                 }
