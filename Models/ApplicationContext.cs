@@ -36,7 +36,6 @@ namespace Project1.Models
                     TaskId = 1,
                     CategoryId = 4,
                     Task = "Minister to ward members",
-                    DueDate = (2022, 02, 28),
                     Quadrant = 2,
                     Completed = false
                 },
@@ -46,7 +45,6 @@ namespace Project1.Models
                     TaskId = 2,
                     CategoryId = 1,
                     Task = "Play video games",
-                    DueDate = (2022, 02, 12),
                     Quadrant = 4,
                     Completed = true
                 }
