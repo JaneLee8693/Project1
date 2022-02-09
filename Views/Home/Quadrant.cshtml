@@ -1,3 +1,95 @@
 ﻿@{
-    ViewData["Title"] = "My tasks";
+    ViewData["Title"] = "Time Mamangement Matrix";
 }
+@* Euigun Jung: #3 *@
+<div class="container">
+
+    <div class="row"> Stephen Covey's Time Management Matrix </div>
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-5">Urgent</div>
+        <div class="col-5">Not Urgent</div>
+    </div>
+
+    <div class="row">
+        <div class="col-2">Important</div>
+        <div class="col-5">
+            Quadrant 1
+            <div>
+                @foreach (var a in Model)
+                {
+                    if (a.Quadrant == 1)
+                    {
+                        <div>
+                            <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@a.taskId"> Edit Task </a> <br />
+                            <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@a.taskId"> Delete Task </a>
+                        </div>
+                        <div>
+                            <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="a.taskId"> Task Completed! </a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="col-5">
+            Quadrant 2
+            <div>
+                @foreach (var a in Model)
+                {
+                    if (a.Quadrant == 2)
+                    {
+                        <div>
+                            <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@a.taskId"> Edit Task </a> <br />
+                            <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@a.taskId"> Delete Task </a>
+                        </div>
+                        <div>
+                            <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="a.taskId"> Task Completed! </a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-2">Not Important</div>
+        <div class="col-5">
+            Quadrant 3
+            <div>
+                @foreach (var a in Model)
+                {
+                    if (a.Quadrant == 3)
+                    {
+                        <div>
+                            <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@a.taskId"> Edit Task </a> <br />
+                            <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@a.taskId"> Delete Task </a>
+                        </div>
+                        <div>
+                            <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="a.taskId"> Task Completed! </a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="col-5">
+            Quadrant 4
+            <div>
+                @foreach (var a in Model)
+                {
+                    if (a.Quadrant == 4)
+                    {
+                        <div>
+                            <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@a.taskId"> Edit Task </a> <br />
+                            <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@a.taskId"> Delete Task </a>
+                        </div>
+                        <div>
+                            <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="a.taskId"> Task Completed! </a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
