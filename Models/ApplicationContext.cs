@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Project1.Models
 {
-    public class DateApplicationContext : DbContext
+    public class ApplicationContext : DbContext
     {
         //Constructor
-        public DateApplicationContext(DbContextOptions<DateApplicationContext> options) : base(options)
+        public ApplicationContext (DbContextOptions<ApplicationContext> options) : base(options)
         {
             //Leave blank for now
         }

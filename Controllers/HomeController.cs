@@ -29,5 +29,28 @@ namespace Project1.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Applications()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Applications(ApplicationResponse ar)
+        {
+            if (ModelState.IsValid)
+            {
+                daContext.Add(ar);
+                daContext.SaveChanges();
+
+                return View("Confirmation", ar);
+            }
+            else //If Invalid
+            {
+                return View();
+            }
+
+        }
+
     }
 }
