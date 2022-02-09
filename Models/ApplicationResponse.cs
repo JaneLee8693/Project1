@@ -20,8 +20,7 @@ namespace Project1.Models
         [Required(ErrorMessage = " Please enter the quadrant it belongs to.")]
         public byte Quadrant { get; set; }
 
-        [Required(ErrorMessage = " Please mark if it has been completed.")]
-        public bool Completed { get; set; }
+         public bool Completed { get; set; }
 
         //Build Foreign Key Relationship
         [Required(ErrorMessage = "Please enter a valid category")]
