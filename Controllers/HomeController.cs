@@ -31,7 +31,7 @@ namespace Project1.Controllers
         [HttpGet]
         public IActionResult Task()
         {
-            ViewBag.Categories = taskContext.categories.ToList();
+            ViewBag.Categories = Context.Category.ToList();
             return View();
         }
 

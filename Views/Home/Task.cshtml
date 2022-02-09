@@ -6,7 +6,7 @@
 <h1>@ViewData["Title"]</h1>
 <p>Fill out your tasks!</p>
 <div>
-    <form>
+    <form method="post">
         <label asp-for="Task">Task:</label>
         <input asp-for="Task" />
         <br />
@@ -21,7 +21,7 @@
             <option value="">Select a Category</option>
             @foreach (Category c in ViewBag.Categories)
             {
-            <option value="@CategoryId">@c.CategoryName</option>
+                <option value="@c.CategoryId">@c.CategoryName</option>
             }
         </select>
         <br />
@@ -31,6 +31,7 @@
             <option value="False">No</option>
         </select>
         <br />
+        <div asp-validation-summary="All"></div>
         <button type="submit">Submit Application</button>
     </form>
 </div>
