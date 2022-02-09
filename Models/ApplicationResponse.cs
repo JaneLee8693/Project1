@@ -15,7 +15,6 @@ namespace Project1.Models
         [Required(ErrorMessage = " Please enter the task.")]
         public string Task { get; set; }
 
-        [Required(ErrorMessage = " Please enter the due date.")]
         public DateTime DueDate { get; set; }
 
         [Required(ErrorMessage = " Please enter the quadrant it belongs to.")]
