@@ -27,7 +27,8 @@ namespace Project1.Models
         [Required(ErrorMessage = " Please mark if it has been completed.")]
         public bool Completed { get; set; }
 
-         //Build Foreign Key Relationship
+        //Build Foreign Key Relationship
+        [Required(ErrorMessage = "Pleasee enter a valid category")]
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
