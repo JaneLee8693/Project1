@@ -55,8 +55,8 @@ namespace Project1.Controllers
         public IActionResult Quadrant()
         {
             var applications = Context.Response
-            .Include(x => x.Category)
-            .Where(x => x.Edited == false)
+            .Include(x => x.CategoryName)
+            .Where(x => x.Completed == false)
             .OrderBy(x => x.Task)
             .ToList();
 
@@ -65,7 +65,7 @@ namespace Project1.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int applicationid)
+        public IActionResult Delete(int taskid)
         {
             //get the record id
             var application = Context.Response.Single(x => x.TaskId == taskid);
@@ -81,7 +81,7 @@ namespace Project1.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int applicationid)
+        public IActionResult Edit(int taskid)
         {
             ViewBag.Categories = Context.Category.ToList(); //get the record info
             var application = Context.Response.Single(x => x.TaskId == taskid);
