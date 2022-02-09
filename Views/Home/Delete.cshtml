@@ -1,2 +1,12 @@
 ﻿@{
 }
+@model ApplicationResponse
+
+<h1> Confirm Deletion </h1>
+<h3> Are you sure you want to delete the record @Model.TaskDescription? </h3>
+<form method="post" asp-controller="Home" asp-action="Delete">
+    <button type="submit" class="btn btn-primary"> Delete Information </button>
+    <a asp-controller="Home" asp-action="MovieList" class="btn btn-primary">Cancel Deletion</a>
+
+    <input type="hidden" asp-for="applicationId" />
+</form>
