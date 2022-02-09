@@ -75,17 +75,17 @@ namespace Project1.Controllers
         [HttpPost]
         public IActionResult Delete(ApplicationResponse ar)
         {
-            taskContext.responses.Remove(ar);
-            taskContext.SaveChanges();
-            return RedirectToAction("TaskList");
+            Context.Response.Remove(ar);
+            Context.SaveChanges();
+            return RedirectToAction("Quadrant");
         }
 
         [HttpGet]
         public IActionResult Edit(int applicationid)
         {
-            ViewBag.Categories = movieContext.categories.ToList(); //get the record info
-            var application = movieContext.responses.Single(x => x.ApplicationId == applicationid);
-            return View("Movies", application);
+            ViewBag.Categories = Context.Category.ToList(); //get the record info
+            var application = Context.Response.Single(x => x.ApplicationId == applicationid);
+            return View("Task", application);
         }
 
         [HttpPost]
@@ -93,9 +93,9 @@ namespace Project1.Controllers
         {
             if (ModelState.IsValid)
             {
-                taskContext.Update(ar);
-                taskContext.SaveChanges();
-                return RedirectToAction("TaskList");
+                Context.Update(ar);
+                Context.SaveChanges();
+                return RedirectToAction("Quadrant");
             }
             else
             {
