@@ -68,7 +68,7 @@ namespace Project1.Controllers
         public IActionResult Delete(int applicationid)
         {
             //get the record id
-            var application = Context.Response.Single(x => x.ApplicationId == applicationid);
+            var application = Context.Response.Single(x => x.TaskId == taskid);
             return View(application);
         }
 
@@ -84,7 +84,7 @@ namespace Project1.Controllers
         public IActionResult Edit(int applicationid)
         {
             ViewBag.Categories = Context.Category.ToList(); //get the record info
-            var application = Context.Response.Single(x => x.ApplicationId == applicationid);
+            var application = Context.Response.Single(x => x.TaskId == taskid);
             return View("Task", application);
         }
 
