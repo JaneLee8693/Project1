@@ -11,14 +11,19 @@ namespace Project1.Models
         [Key]
         [Required]
         public int TaskId { get; set; }
+
         [Required(ErrorMessage = " Please enter the task.")]
         public string Task { get; set; }
+
         [Required(ErrorMessage = " Please enter the due date.")]
-        public string DueDate { get; set; }
+        public DateTime DueDate { get; set; }
+
         [Required(ErrorMessage = " Please enter the quadrant it belongs to.")]
         public byte Quadrant { get; set; }
+
         [Required(ErrorMessage = " Please enter the category.")]
         public string Category { get; set; }
+
         [Required(ErrorMessage = " Please mark if it has been completed.")]
         public bool Completed { get; set; }
 
