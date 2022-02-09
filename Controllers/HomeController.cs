@@ -31,7 +31,7 @@ namespace Project1.Controllers
         [HttpGet]
         public IActionResult Task()
         {
-            ViewBag.Categories = Context.Category.ToList();
+            ViewBag.Category = Context.Category.ToList();
             return View();
         }
 
@@ -40,25 +40,27 @@ namespace Project1.Controllers
         {
             if (ModelState.IsValid)
             {
-                taskContext.Add(ar);
-                taskContext.SaveChanges(); //add and save movies to the database
+                Context.Add(ar);
+                Context.SaveChanges(); //add and save movies to the database
                 return View("Confirmation", ar); //return a confirmation page
             }
             else //if it is invalid
             {
-                ViewBag.Categories = taskContext.categories.ToList();
+                ViewBag.Category = Context.Category.ToList();
                 return View(ar);
             }
         }
 
         [HttpGet]
-        public IActionResult TaskList()
+        public IActionResult Quadrant()
         {
-            var applications = taskContext.responses
+            var applications = Context.Response
             .Include(x => x.Category)
-            //.Where(x => x.Edited == false)
-            .OrderBy(x => x.Title)
+            .Where(x => x.Edited == false)
+            .OrderBy(x => x.Task)
             .ToList();
+
+            return View(applications);
            
         }
 
@@ -66,7 +68,7 @@ namespace Project1.Controllers
         public IActionResult Delete(int applicationid)
         {
             //get the record id
-            var application = taskContext.responses.Single(x => x.ApplicationId == applicationid);
+            var application = Context.Response.Single(x => x.ApplicationId == applicationid);
             return View(application);
         }
 
