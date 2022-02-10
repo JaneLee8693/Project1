@@ -114,7 +114,7 @@ namespace Project1.Controllers
             record.Completed = true;
             Context.SaveChanges();
             // call index function
-            return RedirectToAction("Index");
+            return RedirectToAction("Quadrant");
         }
     }
 }

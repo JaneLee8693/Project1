@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-2">Important</div>
         <div class="col-5">
-            Quadrant 1
+            <p style="color:brown">Quadrant 1</p>
             <div>
                 @foreach (var i in Model)
                 {
@@ -27,11 +27,11 @@
                         <div>
                             <div>@i.Task</div>
                             <div>
-                                <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@i.TaskId"> Edit Task </a> <br />
-                                <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@i.TaskId"> Delete Task </a>
+                                <a asp-controller="Home" asp-action="Edit" asp-route-taskId="@i.TaskId"> Edit Task </a> <br />
+                                <a asp-controller="Home" asp-action="Delete" asp-route-taskId="@i.TaskId"> Delete Task </a>
                             </div>
                             <div>
-                                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="MarkComplete" asp-route-applicationId="@i.TaskId"> Task Completed! </a>
+                                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="MarkComplete" asp-route-ataskId="@i.TaskId"> Task Completed! </a>
                             </div>
                         </div>
                     }
@@ -39,53 +39,53 @@
             </div>
         </div>
         <div class="col-5">
-            Quadrant 2
-            <div>
-                @foreach (var i in Model)
-                {
-                    if (i.Quadrant == 2)
+            <p style="color:brown">Quadrant 2</p>
+                <div>
+                    @foreach (var i in Model)
                     {
-                        <div>
-                            <div>@i.Task</div>
+                        if (i.Quadrant == 2)
+                        {
                             <div>
-                                <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@i.TaskId"> Edit Task </a> <br />
-                                <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@i.TaskId"> Delete Task </a>
+                                <div>@i.Task</div>
+                                <div>
+                                    <a asp-controller="Home" asp-action="Edit" asp-route-taskId="@i.TaskId"> Edit Task </a> <br />
+                                    <a asp-controller="Home" asp-action="Delete" asp-route-taskId="@i.TaskId"> Delete Task </a>
+                                </div>
+                                <div>
+                                    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="MarkComplete" asp-route-taskId="@i.TaskId"> Task Completed! </a>
+                                </div>
                             </div>
-                            <div>
-                                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="@i.TaskId"> Task Completed! </a>
-                            </div>
-                        </div>
+                        }
                     }
-                }
-            </div>
+                </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-2">Not Important</div>
         <div class="col-5">
-            Quadrant 3
-            <div>
-                @foreach (var i in Model)
+            <p style="color:brown">Quadrant 3</p>
+                <div>
+                    @foreach (var i in Model)
 
-                    if (i.Quadrant == 3)
-                    {
-                       <div>
-                            <div>@i.Task</div>
+                        if (i.Quadrant == 3)
+                        {
                             <div>
-                                <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@i.TaskId"> Edit Task </a> <br />
-                                <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@i.TaskId"> Delete Task </a>
+                                <div>@i.Task</div>
+                                <div>
+                                    <a asp-controller="Home" asp-action="Edit" asp-route-taskId="@i.TaskId"> Edit Task </a> <br />
+                                    <a asp-controller="Home" asp-action="Delete" asp-route-taskId="@i.TaskId"> Delete Task </a>
+                                </div>
+                                <div>
+                                    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="MarkComplete" asp-route-taskId="@i.TaskId"> Task Completed! </a>
+                                </div>
                             </div>
-                            <div>
-                                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="@i.TaskId"> Task Completed! </a>
-                            </div>
-                        </div>
+                        }
                     }
-                }
-            </div>
+                </div>
         </div>
         <div class="col-5">
-            Quadrant 4
+            <p style="color:brown">Quadrant 4</p>
             <div>
                 @foreach (var i in Model)
                 {
@@ -94,11 +94,11 @@
                         <div>
                             <div>@i.Task</div>
                             <div>
-                                <a asp-controller="Home" asp-action="Edit" asp-route-applicationId="@i.TaskId"> Edit Task </a> <br />
-                                <a asp-controller="Home" asp-action="Delete" asp-route-applicationId="@i.TaskId"> Delete Task </a>
+                                <a asp-controller="Home" asp-action="Edit" asp-route-ataskId="@i.TaskId"> Edit Task </a> <br />
+                                <a asp-controller="Home" asp-action="Delete" asp-route-taskId="@i.TaskId"> Delete Task </a>
                             </div>
                             <div>
-                                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Complete" asp-route-applicationId="@i.TaskId"> Task Completed! </a>
+                                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="MarkComplete" asp-route-taskId="@i.TaskId"> Task Completed! </a>
                             </div>
                         </div>
                     }
