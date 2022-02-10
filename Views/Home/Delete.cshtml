@@ -7,6 +7,7 @@
 <h3>Are you sure that you want to delete this record for @Model.Task?</h3>
 <form method="post" asp-controller="Home" asp-action="Delete">
     <button type="submit">Delete</button>
+    @* Redirect to Qudrant page when pressed cancel. *@
     <a asp-controller="Home" asp-action="Quadrant" class="btn btn-outline-primary">Cancel</a>
 
     <input type="hidden" asp-for="TaskId" />

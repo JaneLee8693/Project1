@@ -1,25 +1,28 @@
 ﻿@{
     ViewData["Title"] = "Time Mamangement Matrix";
 }
+@* Euigun Jung: Creating Quadrants and letting users Update and Delete the tasks. *@
 
 @model List<ApplicationResponse>
 
 
+@* This is the datagrid that lists out all the uncompleted tasks based on the quadrants. *@
 <div class="container">
 
-    <div class="row" > Stephen Covey's Time Management Matrix </div>
+    <div class="row"> Stephen Covey's Time Management Matrix </div>
 
-    <div class="row" style="border: solid 3px black !important">
+    <div class="row">
         <div class="col-2"></div>
-        <div class="col-5" style="border-left: solid 3px black !important">Urgent</div>
-        <div class="col-5" style="border-left: solid 3px black !important">Not Urgent</div>
+        <div class="col-5">Urgent</div>
+        <div class="col-5">Not Urgent</div>
     </div>
 
-    <div class="row" style="border: solid 3px black !important">
+    <div class="row">
         <div class="col-2">Important</div>
-        <div class="col-5" style="border-left: solid 3px black !important">
+        <div class="col-5">
             <p style="color:brown">Quadrant 1</p>
             <div>
+@* this loop allows to match up the taskid from the database and link it to the viewfile. When user wants to edit and delete it will direct to the right pages. *@
                 @foreach (var i in Model)
                 {
                     if (i.Quadrant == 1)
@@ -38,7 +41,7 @@
                 }
             </div>
         </div>
-        <div class="col-5" style="border-left: solid 3px black !important">
+        <div class="col-5">
             <p style="color:brown">Quadrant 2</p>
                 <div>
                     @foreach (var i in Model)
@@ -52,6 +55,7 @@
                                     <a asp-controller="Home" asp-action="Delete" asp-route-taskId="@i.TaskId"> Delete Task </a>
                                 </div>
                                 <div>
+                                    @* When the user presses this button, the task will be automatically deleted from the list *@
                                     <a class="btn btn-outline-primary" asp-controller="Home" asp-action="MarkComplete" asp-route-taskId="@i.TaskId"> Task Completed! </a>
                                 </div>
                             </div>
@@ -61,9 +65,9 @@
         </div>
     </div>
 
-    <div class="row" style="border: solid 3px black !important">
+    <div class="row">
         <div class="col-2">Not Important</div>
-        <div class="col-5" style="border-left: solid 3px black !important">
+        <div class="col-5">
             <p style="color:brown">Quadrant 3</p>
                 <div>
                     @foreach (var i in Model)
@@ -83,7 +87,7 @@
                         }
                 </div>
         </div>
-        <div class="col-5" style="border-left: solid 3px black !important">
+        <div class="col-5">
             <p style="color:brown">Quadrant 4</p>
             <div>
                 @foreach (var i in Model)

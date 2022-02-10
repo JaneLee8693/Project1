@@ -3,6 +3,8 @@
 }
 @model Project1.Models.ApplicationResponse;
 
+@* This page allows the user to create a task. It will go through validation process and it will be posted on the quadrant page. *@
+
 <h1>@ViewData["Title"]</h1>
 <p>Fill out your tasks!</p>
 <div>
@@ -19,7 +21,7 @@
         <label asp-for="CategoryId">Category:</label>
         <select asp-for="CategoryId">
             <option value="">Select a Category</option>
-            @foreach (Category c in ViewBag.Category)
+            @foreach (Category c in ViewBag.Categories)
             {
                 <option value="@c.CategoryId">@c.CategoryName</option>
             }

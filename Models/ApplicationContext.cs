@@ -19,7 +19,7 @@ namespace Project1.Models
         public DbSet<Category> Category { get; set; }
 
 
-        //Seed data
+        //Seed data as default (we want to see it as a test. The data may be changed afterwards)
         protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<Category>().HasData(

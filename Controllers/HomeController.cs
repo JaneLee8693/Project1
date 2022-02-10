@@ -23,11 +23,13 @@ namespace Project1.Controllers
         {
             return View();
         }
+        //This is the extrapage that links to the Stephen Corvey's Hompage
         public IActionResult Summary()
         {
             return View();
         }
 
+        //Directs to the Task page in the View folder to create tasks 
         [HttpGet]
         public IActionResult Task()
         {
@@ -51,6 +53,7 @@ namespace Project1.Controllers
             }
         }
 
+        // Directs to the Quadrant page in the View folder to see the list of the tasks in the quadrant 
         [HttpGet]
         public IActionResult Quadrant()
         {
@@ -64,6 +67,8 @@ namespace Project1.Controllers
            
         }
 
+
+        // CRUD - Deletion Part 
         [HttpGet]
         public IActionResult Delete(int taskid)
         {
@@ -80,6 +85,7 @@ namespace Project1.Controllers
             return RedirectToAction("Quadrant");
         }
 
+        // CRUD - Edit/Update Part 
         [HttpGet]
         public IActionResult Edit(int taskid)
         {
@@ -105,6 +111,7 @@ namespace Project1.Controllers
 
         }
 
+        // When the user presses Completed button, change the task status to (completed:true) and delete from the quadrant list. 
         public IActionResult MarkComplete(int taskId)
         {
             // get a single data by its taskId
