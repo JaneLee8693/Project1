@@ -31,7 +31,7 @@
                                 <a asp-controller="Home" asp-action="Delete" asp-route-taskId="@i.TaskId"> Delete Task </a>
                             </div>
                             <div>
-                                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="MarkComplete" asp-route-ataskId="@i.TaskId"> Task Completed! </a>
+                                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="MarkComplete" asp-route-taskId="@i.TaskId"> Task Completed! </a>
                             </div>
                         </div>
                     }
@@ -93,7 +93,7 @@
                         <div>
                             <div>@i.Task</div>
                             <div>
-                                <a asp-controller="Home" asp-action="Edit" asp-route-ataskId="@i.TaskId"> Edit Task </a> <br />
+                                <a asp-controller="Home" asp-action="Edit" asp-route-taskId="@i.TaskId"> Edit Task </a> <br />
                                 <a asp-controller="Home" asp-action="Delete" asp-route-taskId="@i.TaskId"> Delete Task </a>
                             </div>
                             <div>
