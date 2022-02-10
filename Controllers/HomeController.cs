@@ -104,5 +104,17 @@ namespace Project1.Controllers
             }
 
         }
+
+        public IActionResult MarkComplete(int taskId)
+        {
+            // get a single data by its recordId
+            var record = Context.Response.Single(x => x.TaskId == taskId);
+
+            // change its completed as true
+            record.Completed = true;
+            Context.SaveChanges();
+            // call index function
+            return RedirectToAction("Index");
+        }
     }
 }
