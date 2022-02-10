@@ -83,7 +83,7 @@ namespace Project1.Controllers
         [HttpGet]
         public IActionResult Edit(int taskid)
         {
-            ViewBag.Categories = Context.Category.ToList(); //get the record info
+            ViewBag.Category = Context.Category.ToList(); //get the record info
             var application = Context.Response.Single(x => x.TaskId == taskid);
             return View("Task", application);
         }
