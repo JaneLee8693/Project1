@@ -12,11 +12,11 @@ namespace Project1.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationContext Context { get; set; }
+        private ApplicationContext ApplicationContext { get; set; }
 
         public HomeController(ApplicationContext someName)
         {
-            Context = someName;
+            ApplicationContext = someName;
         }
 
         public IActionResult Index()
@@ -33,7 +33,7 @@ namespace Project1.Controllers
         [HttpGet]
         public IActionResult Task()
         {
-            ViewBag.Category = Context.Category.ToList();
+            ViewBag.Category = ApplicationContext.Category.ToList();
             return View();
         }
 
@@ -42,13 +42,13 @@ namespace Project1.Controllers
         {
             if (ModelState.IsValid)
             {
-                Context.Add(ar);
-                Context.SaveChanges(); //add and save movies to the database
+                ApplicationContext.Add(ar);
+                ApplicationContext.SaveChanges(); //add and save movies to the database
                 return View("Confirmation", ar); //return a confirmation page
             }
             else //if it is invalid
             {
-                ViewBag.Category = Context.Category.ToList();
+                ViewBag.Category = ApplicationContext.Category.ToList();
                 return View(ar);
             }
         }
@@ -57,7 +57,7 @@ namespace Project1.Controllers
         [HttpGet]
         public IActionResult Quadrant()
         {
-            var applications = Context.Response
+            var applications = ApplicationContext.Response
             .Include(x => x.CategoryName)
             .Where(x => x.Completed == false)
             .OrderBy(x => x.Task)
@@ -73,15 +73,15 @@ namespace Project1.Controllers
         public IActionResult Delete(int taskid)
         {
             //get the record id
-            var application = Context.Response.Single(x => x.TaskId == taskid);
+            var application = ApplicationContext.Response.Single(x => x.TaskId == taskid);
             return View(application);
         }
 
         [HttpPost]
         public IActionResult Delete(ApplicationResponse ar)
         {
-            Context.Response.Remove(ar);
-            Context.SaveChanges();
+            ApplicationContext.Response.Remove(ar);
+            ApplicationContext.SaveChanges();
             return RedirectToAction("Quadrant");
         }
 
@@ -89,8 +89,8 @@ namespace Project1.Controllers
         [HttpGet]
         public IActionResult Edit(int taskid)
         {
-            ViewBag.Category = Context.Category.ToList(); //get the record info
-            var application = Context.Response.Single(x => x.TaskId == taskid);
+            ViewBag.Category = ApplicationContext.Category.ToList(); //get the record info
+            var application = ApplicationContext.Response.Single(x => x.TaskId == taskid);
             return View("Task", application);
         }
 
@@ -99,8 +99,8 @@ namespace Project1.Controllers
         {
             if (ModelState.IsValid)
             {
-                Context.Update(ar);
-                Context.SaveChanges();
+                ApplicationContext.Update(ar);
+                ApplicationContext.SaveChanges();
                 return RedirectToAction("Quadrant");
             }
             else
@@ -115,11 +115,11 @@ namespace Project1.Controllers
         public IActionResult MarkComplete(int taskId)
         {
             // get a single data by its taskId
-            var record = Context.Response.Single(x => x.TaskId == taskId);
+            var record = ApplicationContext.Response.Single(x => x.TaskId == taskId);
 
             // change its completed as true
             record.Completed = true;
-            Context.SaveChanges();
+            ApplicationContext.SaveChanges();
             return RedirectToAction("Quadrant");
         }
     }
